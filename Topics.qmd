@@ -1,0 +1,15 @@
+---
+title: "Topic"
+format: typst
+editor: visual
+---
+
+## Topic Background
+
+The topic of this capstone is based in linguistics. Within linguistics, I am interested in phonetics and morphosyntax. In simple words phonetics is the production of sound, morphology is the structure of words and syntax is the arrangement of those words to form sentences. For phonetics Professor Ernesto Gutiérrez Topete would be my advisor and for morphosyntax it would be Professor Michael J.k Diercks,
+
+## Topic (s?)
+
+Phonetics Topic: Applying a statistical formula across phonetic elements to test the span of the formula's prediction range. This would require data cleaning and data analysis from labs run by prof. Gutiérrez Topete.
+
+morphosyntax: Predicting language processing difficulty and resolving ambiguity (possibly seen in auto-correction and autocomplete search guesses)
