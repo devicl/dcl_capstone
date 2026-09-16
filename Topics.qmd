@@ -1,15 +1,31 @@
 ---
-title: "Topic"
+title: "Topic and Bibliography"
 format: typst
 editor: visual
 ---
 
 ## Topic Background
 
-The topic of this capstone is based in linguistics. Within linguistics, I am interested in phonetics and morphosyntax. In simple words phonetics is the production of sound, morphology is the structure of words and syntax is the arrangement of those words to form sentences. For phonetics Professor Ernesto Gutiérrez Topete would be my advisor and for morphosyntax it would be Professor Michael J.k Diercks,
+The topic of this capstone is based in linguistics, however there is a cognitive component underlying it. Within linguistics, sentence structures are determined by syntactic analysis.
 
-## Topic (s?)
+Language code-switching.
 
-Phonetics Topic: Applying a statistical formula across phonetic elements to test the span of the formula's prediction range. This would require data cleaning and data analysis from labs run by prof. Gutiérrez Topete.
+What is the frequency of code-switching at the identified structural types of code-switching? Why does it happen in these positions and can they be predicted using morphosyntactic patterns?
 
-morphosyntax: Predicting language processing difficulty and resolving ambiguity (possibly seen in auto-correction and autocomplete search guesses)
+Data: Open source corpora for Spanish and English, this can involve web scrapping for text and discourse. At first glance, social media could be considered but this is unfavorable due to the usage of vernacular language specific to online platforms. A potential source of data is then the Bangor Miami corpus, which has conversation data.
+
+<https://bangortalk.org.uk/>
+
+## Bibliography
+
+This article is zooming out on possible causes for the occurrence of code-switching. It provides background for what is code-switching, where it occurs, and what can trigger it at a social level. This is a foundation of holistic code-switching as a social and psychological process.
+
+Bouchard, M.-E. (2025). Why do they code-switch? Examining code-switching, use of vernacular, and linguistic insecurity in a minority French-speaking context of Canada. Journal of Multilingual & Multicultural Development, 1–16. https://doi.org/10.1080/01434632.2025.2542386
+
+Phillips & Sedarous suggest that bilinguals have a wider range of permissible word orders across languages that do not necessarily adhere to that language's general grammatical structure. In this data analysis, that could mean that patter finding for code-switching is not necessarily in accordance to the known language structure and may show different structure preferences depending on other variables.
+
+Phillips, S. F., & Sedarous, Y. (2026). Finding anchors in code-switching: How nouns guide online processing of nominals across three bilingual groups. Glossa: A Journal of General Linguistics, 11(1). https://doi.org/10.16995/glossa.23254
+
+Chan applies the portmanteau construction as an interpretation for speech formation. In this structure, bilinguals co-activate head-complements reading the phonetic output in both langauges and therefore exhibiting code-switching. In this sense, analysis patterns in corpora, would further reveal the proposed theorical model of linguistics explains code-switching.
+
+Chan B. H. (2015). Portmanteau Constructions, Phrase Structure, and Linearization. *Frontiers in psychology*, *6*, 1851. https://doi.org/10.3389/fpsyg.2015.01851
