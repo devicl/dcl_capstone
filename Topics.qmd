@@ -1,5 +1,5 @@
 ---
-title: "Topic and Bibliography"
+title: "Topic, Background, Outline"
 format: typst
 editor: visual
 ---
@@ -29,3 +29,67 @@ Phillips, S. F., & Sedarous, Y. (2026). Finding anchors in code-switching: How n
 Chan applies the portmanteau construction as an interpretation for speech formation. In this structure, bilinguals co-activate head-complements reading the phonetic output in both langauges and therefore exhibiting code-switching. In this sense, analysis patterns in corpora, would further reveal the proposed theorical model of linguistics explains code-switching.
 
 Chan B. H. (2015). Portmanteau Constructions, Phrase Structure, and Linearization. *Frontiers in psychology*, *6*, 1851. https://doi.org/10.3389/fpsyg.2015.01851
+
+## Outline
+
+Introduction
+
+The introduction section introduces the disciplines theoretical background that informs the basis for what the results can mean within the field. Code-switching, as defined in cognitive science, is an aspect of bilingualism, therefore what informs this paper is the language processes theorized to be engaged when the code-switch is happening.
+
+- Bilingualism Experience
+
+  - Co-activation theory
+
+- Code-switching
+
+  - Code-switching defined
+
+  - As seen in spoken language
+
+    - Discuss phonetic cues (and whatever else applies)
+
+  - As seen in written language
+
+    - Discuss syntactic/lexical cues
+
+    - Introduce the idea behind the research performed by Zirnstein
+
+- The current analysis
+
+  - Research Question(s)
+
+  - Importance
+
+Methods
+
+Methodology then works to explain the two data sources I am working with (maybe introducing the data should happen ealier on?). My first work is with a language corpus that through analysis might inform how language functions naturally. It is sort of working backwards to see what is found through the experimental data is indeed naturally induced in everyday language use (observational data).
+
+- Miami Spanish-English Bilingual Corpus
+
+  - Background information  - access and permutation performed
+
+  - Syntactic
+
+  - Lexical
+
+- Experimental Data
+
+  - Study Design
+
+    - Sampling + location
+
+  - Time of data collection
+
+  - Materials
+
+  - Peripheral
+
+Analysis 1 (Corpus)
+
+Analysis 2 (Experimental)
+
+Results
+
+Discussion
+
+- interpretation of joint data findings (how do the analysis in one connect to the other or reveal something that is not clear in the other)
