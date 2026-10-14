@@ -93,3 +93,11 @@ Results
 Discussion
 
 - interpretation of joint data findings (how do the analysis in one connect to the other or reveal something that is not clear in the other)
+
+## Section Draft (Introduction)
+
+Language acquisition is a quality of humanity. Regardless of the language learned there is an assumption of an innate underlying grammatical structure that rules all languages. This proposed assumption is known as Universal Grammar, coined by Noah Chomsky as cognitive representations of language structures. While there are universal similarities there are also language variations, or parameters that govern over individual languages. That means in cases such as English and Japanese, they are governed by a hierarchy that places nouns or verbs in positions relative to each other; however, there is flexibility in the order for which it is syntactically and overtly observed. English, for instance, has the order of subject-verb-object but Japanese has the order of subject-object-verb. 
+
+Bilingualism is increasingly associated with what is known as the bilingual advantage. The bilingual advantage, in more general terms of cognitive abilities, is the demonstrated difference between bilingual and monolingual groups for executive function, which includes working memory and control, delayed cognitive decline, and overall observed neural differences in the brain (Kroll & Bialystok, 2013). The prevailing conclusion for these differences is that bilinguals have a distinct structure for language than monolinguals (Kroll & Bialystok, 2013).  The distinction, however, is not the mapping of two separate and mutually exclusive representations. Experimental data favor the interpretation of an observed dual activation, or co-activation of languages (Kroll & Bialystok, 2013).
+
+Language production and processing is therefore inherently different in maintaining a degree of separation in the articulation of either language. A speaker does not naturally produce “A squirrel corrio on top of a arbol” but a sentence such as “Quiero mirar el show” is considered grammatical.
