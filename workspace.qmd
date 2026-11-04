@@ -1,0 +1,213 @@
+---
+title: "Workspace"
+author: "Devi Canseco Lopez"
+format: pdf
+editor: visual
+---
+
+## Bangor Miami Data
+
+```{r, include = FALSE}
+
+library(tidyverse)
+library(brms)
+library(lme4)
+herring1_cgwords <-read.delim("C:/Users/mc15p/OneDrive/Documents/R Projects/dcl_capstone/miami/herring1_cgwords.tsv")
+herring2_cgwords <-read_tsv("C:/Users/mc15p/OneDrive/Documents/R Projects/dcl_capstone/miami/herring2_cgwords.tsv")
+herring3_cgwords <-read_tsv("C:/Users/mc15p/OneDrive/Documents/R Projects/dcl_capstone/miami/herring3_cgwords.tsv")
+CS_Parafovea_norming <- read.csv("C:/Users/mc15p/OneDrive/Documents/R Projects/dcl_capstone/CS Parafovea - items for cloze norming.xlsx - Sheet1.csv")
+et_data <-read_tsv("C:/Users/mc15p/OneDrive/Documents/R Projects/dcl_capstone/CS Parafovea - ALL participants ET data.xlsx - all participants.tsv")
+
+
+```
+
+### Data Cleaning
+
+The goals of this section:
+
+- punctuation
+
+- filler words (ex. oh, ah, er)
+
+- wrong glossing (as in proper nouns labeled as nouns or NAs)
+
+- mixed-language labeling (also names)
+
+```{r}
+
+all_data <- full_join(herring1_cgwords, herring2_cgwords)
+
+#This step removed columns that are composed of entirely NA values. it then summarizes the number of instances each language appears per word.
+data <- herring1_cgwords |>
+  select(-fix,-eng, -com, -clause, -clauseno) |>
+  group_by(langid) |>
+  summarize(n())
+
+#The prior step shows that punctuation is coded as 999 under language, which makes it unuseful for the current purpose.
+
+#Remove punctuation and remove the redundant auto gloss repetition of the word.
+data_clean <- all_data|>
+  select(-fix,-eng, -com, -clause, -clauseno) |>
+  filter(langid != "",langid !="999" ) |>
+  mutate(auto = if_else(str_detect(auto,"."), str_extract(auto,"(?<=\\.).*"), auto), 
+         pos = if_else(str_detect(auto,"."), str_extract(auto,"^[^.]+"), auto)
+         ) 
+
+#extract major POS, separate inflections
+data_clean <- data_clean |>
+  mutate(
+    langid = str_replace(langid,"eng&spa", "eng"), # might change to remove
+    pos = na_if(pos, ""),
+    pos = replace_na(pos, "N"), 
+    gender = if_else(str_detect(auto,"\\.(F|M)\\."), str_extract(auto,"(F|M)"), "neuter"), 
+    number = if_else(str_detect(auto,"\\.(SG|\\dS|P)"), str_extract(auto,"(SG|\\dS|\\dP)"), "neuter"))
+
+# Joining for superdata on conversations
+
+
+
+
+
+
+# test_str <- c("PRON.SUB.F.3S","V.INFIN")
+# 
+# if_else(str_detect(test_str,"\\.(F|M)\\."), str_extract(test_str,"\\.(F|M)"), "neuter")
+# str_extract(test_str ,"\\.(F|M)")
+
+```
+
+### Summary Statistics
+
+Goals:
+
+- determine where switches happen (before and after)
+
+- Spanish use per speaker
+
+- Frequency of code-switch per speaker and part of speech
+
+```{r}
+#utterance word length by speaker
+data_clean |>
+    add_count(speaker, utterance_id) |>
+    group_by(speaker) |>
+    summarise(avg_sentence = mean(n)) |> # keep until here for avg utternace length
+  ggplot(aes(x=avg_sentence)) + # prob remove not that useful
+  geom_bar() #remove OSE
+
+#Length of utterance
+# ggplot(data_clean, aes(x=utterance_id)) +
+#   geom_bar()
+
+#spanish frequency by speaker
+data_clean |>
+  group_by(speaker) |>
+  filter(langid == "spa") |>
+  summarize(n())
+
+#POS 1 before switch
+boundaries <- data_clean |>
+  group_by(speaker, utterance_id) |>
+  mutate(
+    next_lang = lead(langid), #find the next entry for lang
+    next_pos = lead(pos) #next entry for POS
+  ) |>
+  ungroup() |>
+  filter(!is.na(next_lang)) |> #Utterance end filter (speaker change)
+  mutate(switch = as.integer(langid != next_lang)) #binary codeswitch
+
+count(boundaries, pos, sort =TRUE)
+
+pos_table <- boundaries |>
+  group_by(pos) |>
+  summarise(
+    boundaries = n(), #how many times that POS appears
+    switches   = sum(switch), #switch occurred after POS
+    rate       = switches / boundaries,
+    .groups = "drop"
+  )
+
+overall_rate <- mean(boundaries$switch)
+
+
+Spk_rate_table <- boundaries |>
+  group_by(speaker) |>
+  summarise(
+    boundaries = n(),
+    switches   = sum(switch),
+    rate       = switches / boundaries,
+    .groups = "drop"
+  )
+
+
+
+```
+
+### Base Comparison
+
+This section works to form the baseline comparison between experimental and corpus data. It investigates the ability of determiners to predict switches and how cognates and non-cognates further inform this.
+
+Goals:
+
+- 
+
+Possible statistical test:
+
+markov chains?
+
+What are the most common code-switched words (POS)?
+
+Summary statistic + visualization +
+
+```{r}
+
+
+# mlm <- glmer(switch ~ pos + location + (1|speaker) , data = boundaries, family = binomial(link = "logit"))
+# 
+# summary(mlm)
+```
+
+Therefore making a predicition three or another clustering method in machine learning?
+
+When will a switch happen?
+
+### The Special Case of Maria
+
+### Something along the lines of
+
+what part of speech is most relevant to code-switching prediction
+
+## Experimental Eye-Tracking Data
+
+"The current study aimed to assess whether bilinguals similarly use visual cues in the parafovea, such as orthographic form and language status, to anticipate and therefore reduce costs related to the processing of an intra-sentential code-switch"
+
+```{r}
+test <- et_data |>
+  group_by(cognate_status, code_switch, gender, Masked) |>
+  filter(Article == 1|Target == 1, IA_SKIP == 0) |>
+  summarize(
+    group_mean = mean(as.numeric(IA_FIRST_RUN_DWELL_TIME)),
+    SD = sd(as.numeric(IA_FIRST_RUN_DWELL_TIME)),
+    n = n(),
+    SE =SD/sqrt(n),
+    .groups = "drop")
+  
+ggplot(test, aes(x = code_switch, y = group_mean, fill = Masked)) +
+  geom_bar(stat = "identity", position = position_dodge(0.9)) +
+             geom_errorbar(
+               aes(ymin = group_mean - SE, ymax = group_mean + SE),
+               position = position_dodge(0.9),
+               width = 0.25                 # Width of the horizontal error bar caps
+             ) +
+  facet_grid(cognate_status ~ gender) +
+  scale_fill_manual( values = c("Y" = "magenta", "N" = "blue")) +
+  coord_cartesian(ylim = c(220,NA))
+  
+  
+```
+
+### Cognate-Non Cognate target
+
+### Placing factors such as code-switching behavior, verbal fluency, cognitive control to code-switch anticipation
+
+### 
