@@ -1,103 +1,45 @@
 ---
-title: "Topic, Background, Outline"
-format: typst
-editor: visual
+title: "Preciting Code-Switching: Comparitive Analysis of Data"
+author:
+  - name: Devi Canseco Lopez
+    affiliations:
+      - name: Pomona College
+        department: Capstone in Data Science
+date: last-modified
+abstract: "I do not have an abstract yet."
+keywords: [Cognitive Science, Language, Bilingualism, Prediction]
+bibliography: references.bib
+format:
+  pdf:
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - margin=1in
+    papersize: letter
 ---
 
-## Topic Background
+## Introduction
 
-The topic of this capstone is based in linguistics, however there is a cognitive component underlying it. Within linguistics, sentence structures are determined by syntactic analysis.
+### The Bilingual Experience
 
-Language code-switching.
+Bilingualism is a growing experience across the world, whether it is through late second-language acquisition, early childhood immersion, or other varied source of exposure in a globally connected stage of the world. Bilingualism, as it has been studied, is an ability that creates a cognitive, behavioral, and neural difference from a monolingual experience (). Second-language acquisition even at a perceived lower-than-mastery level can be linked to varying levels of advantages in executive functions, which includes working memory, inhibitory control, and flexibility (for a review see Bialystok & Poarch, 2014). The prevailing conclusion for these differences is that bilinguals have a distinct structure for language than monolinguals. That is to say, bilinguals have a different form of language production and comprehension. 
 
-What is the frequency of code-switching at the identified structural types of code-switching? Why does it happen in these positions and can they be predicted using morphosyntactic patterns?
+### Code-Switching
 
-Data: Open source corpora for Spanish and English, this can involve web scrapping for text and discourse. At first glance, social media could be considered but this is unfavorable due to the usage of vernacular language specific to online platforms. A potential source of data is then the Bangor Miami corpus, which has conversation data.
+Even within bilingual communities further differences are observed in language control through code-switching. Language control allows for the delivery of the correct language in speech, preventing unintended insertions of a secondary language while talking to a speaker that only understands one. Alternatively, Code-switching is the structured use of alternating languages within a conversation. Code-switching is seen for single word insertion, sentence switch, or phrasal switches. The alternation between languages is seen to incur a switching cost which is a delayed response time between the previous and current language in face of inhibition demands. The patterns of code-switching are not well understood, but recent studies use linguistic signals to determine possible syntactic and grammatical restrictions imposed on code-switching languages. For example, combinations of determiner and nouns can be measured for congruency, in languages with morphologically coded agreement, and commonality of use for those phrases. Beatty-Martínez & Dussias (2017) measure these differences through the N400 effect, which is linked to sensibility to unexpected stimuli, for habitual code-switchers and non-codeswitchers. They found a greater N400 effect for incongruency for code-switchers and a general early frontal activity to code-switching in non-codeswitchers. This study further reflects the theoretical model of Adaptive Control Hypothesis that poses a flexibility in language control depending on conversational contexts, signaling there is a degree of predictability in which code-switching is structured in relation to an individual's interaction with their language. 
 
-<https://bangortalk.org.uk/>
+### Prediction
 
-## Bibliography
+Prediction is seen as the ability to anticipate the upcoming word by semantic constraint or context. Auditorably, phonetic variation, including voice onset and speech rate,  occurs as a signal of code-switching aiding in the anticipation of a code-switch (Fricke et al., 2016). Other linguistic signals observed manifest at a syntactic level, through preference as seen in Beatty-Martínez & Dussias (2017). Fricke & Kootstra (2016) explored the factors that trigger code-switching as a language activation effect utilizing the Bangor Miami Corpus of English-Spanish codeswitching (Deuchar et al., 2014), where they found that the presence of a prior code-switch triggered following code-switches for close distance utterances and words. Valdés Kroff (2016) focused on code-switching between determiners and noun phrases in the Bangor Miami Corpus and found that in gendered determiners of Spanish there is a significant preference for masculine determiners regardless of the noun phrase’s Spanish gender. Valdés Kroff concludes masculine determiners masculine determiners can function as a predictor for a code-switch of the noun phrase. 
 
-This article is zooming out on possible causes for the occurrence of code-switching. It provides background for what is code-switching, where it occurs, and what can trigger it at a social level. This is a foundation of holistic code-switching as a social and psychological process.
+### The Current Analysis
 
-Bouchard, M.-E. (2025). Why do they code-switch? Examining code-switching, use of vernacular, and linguistic insecurity in a minority French-speaking context of Canada. Journal of Multilingual & Multicultural Development, 1–16. https://doi.org/10.1080/01434632.2025.2542386
+The current analysis aims to investigate the syntactic prediction brought by part of speech in bilingual conversation by comparing a bilingual corpus to experimental data on predictive code-switching. The first part of the analysis is a replication of prior work comparing use of determiners as markers of code-switches as a base of validity for experimental data analysis in corpus work. Then the analysis seeks to explore particular qualities pertaining to other variable effects on code-switching.
 
-Phillips & Sedarous suggest that bilinguals have a wider range of permissible word orders across languages that do not necessarily adhere to that language's general grammatical structure. In this data analysis, that could mean that patter finding for code-switching is not necessarily in accordance to the known language structure and may show different structure preferences depending on other variables.
+## Methods
 
-Phillips, S. F., & Sedarous, Y. (2026). Finding anchors in code-switching: How nouns guide online processing of nominals across three bilingual groups. Glossa: A Journal of General Linguistics, 11(1). https://doi.org/10.16995/glossa.23254
+The first section of the study utilized the open-access Miami Bilingual Corpus (Deuchar et al. 2014). This data was compiled from conversational recordings of 84 participants living in Miami, Florida, which was then automatically glossed for part of speech and language. The speakers themselves are anonymous, with speech from non-consenting participants being redacted from the corpus. 
 
-Chan applies the portmanteau construction as an interpretation for speech formation. In this structure, bilinguals co-activate head-complements reading the phonetic output in both langauges and therefore exhibiting code-switching. In this sense, analysis patterns in corpora, would further reveal the proposed theorical model of linguistics explains code-switching.
+## Analysis
 
-Chan B. H. (2015). Portmanteau Constructions, Phrase Structure, and Linearization. *Frontiers in psychology*, *6*, 1851. https://doi.org/10.3389/fpsyg.2015.01851
-
-## Outline
-
-Introduction
-
-The introduction section introduces the disciplines theoretical background that informs the basis for what the results can mean within the field. Code-switching, as defined in cognitive science, is an aspect of bilingualism, therefore what informs this paper is the language processes theorized to be engaged when the code-switch is happening.
-
-- Bilingualism Experience
-
-  - Co-activation theory
-
-- Code-switching
-
-  - Code-switching defined
-
-  - As seen in spoken language
-
-    - Discuss phonetic cues (and whatever else applies)
-
-  - As seen in written language
-
-    - Discuss syntactic/lexical cues
-
-    - Introduce the idea behind the research performed by Zirnstein
-
-- The current analysis
-
-  - Research Question(s)
-
-  - Importance
-
-Methods
-
-Methodology then works to explain the two data sources I am working with (maybe introducing the data should happen ealier on?). My first work is with a language corpus that through analysis might inform how language functions naturally. It is sort of working backwards to see what is found through the experimental data is indeed naturally induced in everyday language use (observational data).
-
-- Miami Spanish-English Bilingual Corpus
-
-  - Background information  - access and permutation performed
-
-  - Syntactic
-
-  - Lexical
-
-- Experimental Data
-
-  - Study Design
-
-    - Sampling + location
-
-  - Time of data collection
-
-  - Materials
-
-  - Peripheral
-
-Analysis 1 (Corpus)
-
-Analysis 2 (Experimental)
-
-Results
-
-Discussion
-
-- interpretation of joint data findings (how do the analysis in one connect to the other or reveal something that is not clear in the other)
-
-## Section Draft (Introduction)
-
-Language acquisition is a quality of humanity. Regardless of the language learned there is an assumption of an innate underlying grammatical structure that rules all languages. This proposed assumption is known as Universal Grammar, coined by Noah Chomsky as cognitive representations of language structures. While there are universal similarities there are also language variations, or parameters that govern over individual languages. That means in cases such as English and Japanese, they are governed by a hierarchy that places nouns or verbs in positions relative to each other; however, there is flexibility in the order for which it is syntactically and overtly observed. English, for instance, has the order of subject-verb-object but Japanese has the order of subject-object-verb. 
-
-Bilingualism is increasingly associated with what is known as the bilingual advantage. The bilingual advantage, in more general terms of cognitive abilities, is the demonstrated difference between bilingual and monolingual groups for executive function, which includes working memory and control, delayed cognitive decline, and overall observed neural differences in the brain (Kroll & Bialystok, 2013). The prevailing conclusion for these differences is that bilinguals have a distinct structure for language than monolinguals (Kroll & Bialystok, 2013).  The distinction, however, is not the mapping of two separate and mutually exclusive representations. Experimental data favor the interpretation of an observed dual activation, or co-activation of languages (Kroll & Bialystok, 2013).
-
-Language production and processing is therefore inherently different in maintaining a degree of separation in the articulation of either language. A speaker does not naturally produce “A squirrel corrio on top of a arbol” but a sentence such as “Quiero mirar el show” is considered grammatical.
+## Conclusions

@@ -34,7 +34,7 @@ The goals of this section:
 - mixed-language labeling (also names)
 
 ```{r}
-
+# Joining for superdata on conversations
 all_data <- full_join(herring1_cgwords, herring2_cgwords)
 
 #This step removed columns that are composed of entirely NA values. it then summarizes the number of instances each language appears per word.
@@ -59,15 +59,18 @@ data_clean <- data_clean |>
     langid = str_replace(langid,"eng&spa", "eng"), # might change to remove
     pos = na_if(pos, ""),
     pos = replace_na(pos, "N"), 
-    gender = if_else(str_detect(auto,"\\.(F|M)\\."), str_extract(auto,"(F|M)"), "neuter"), 
-    number = if_else(str_detect(auto,"\\.(SG|\\dS|P)"), str_extract(auto,"(SG|\\dS|\\dP)"), "neuter"))
+    gender = if_else(str_detect(auto,"\\.(F|M)\\."), str_extract(auto,"\\.(F|M)\\."), "neuter"), 
+    number = if_else(str_detect(auto,"\\.(SG|\\dS|P)"), str_extract(auto,"(SG|\\dS|\\dP)"), "neuter"),
+    article = if_else(surface == "el"| surface == "la", 1, 0)) # not working
+    # cognate_status = if_else(sueface == tren, C, NC)) #find a way to sort
 
-# Joining for superdata on conversations
-
-
-
-
-
+test2 <- data_clean |>
+  group_by(utterance_id) |>
+  mutate(next_word = lead(surface), 
+         next_pos = lead(pos),
+         next_location = lead(location)) |>
+  filter(article == 1, next_location == location +1) |>
+  ungroup() 
 
 # test_str <- c("PRON.SUB.F.3S","V.INFIN")
 # 
@@ -90,10 +93,12 @@ Goals:
 #utterance word length by speaker
 data_clean |>
     add_count(speaker, utterance_id) |>
+    filter(speaker != "OSE")|> #remove OSE
     group_by(speaker) |>
     summarise(avg_sentence = mean(n)) |> # keep until here for avg utternace length
   ggplot(aes(x=avg_sentence)) + # prob remove not that useful
-  geom_bar() #remove OSE
+  geom_bar() +
+  coord_cartesian(ylim = c(1,NA))
 
 #Length of utterance
 # ggplot(data_clean, aes(x=utterance_id)) +
@@ -149,7 +154,25 @@ This section works to form the baseline comparison between experimental and corp
 
 Goals:
 
-- 
+- rate comparison -\> anova between
+
+- gender of det, gender of following noun, code-switch
+
+```{r}
+#this is technically looking at the wrong thing because it is looking at before el/la
+boundaries |>
+  filter(gender == ".F."| gender ==".M.", article == 1) |>
+  # filter(article == 1 | pnoun == 1) |>
+  group_by(gender) |>
+  summarize(boundaries = n(),
+            switches   = sum(switch),
+            rate       = switches / boundaries,
+            .groups = "drop") |># rate of switch between f/m det and following nouns
+ggplot(aes(x = gender, y = rate)) +
+  geom_col() 
+
+
+```
 
 Possible statistical test:
 
